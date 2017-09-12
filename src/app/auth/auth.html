@@ -31,7 +31,6 @@
     <button ion-button block [color]="authAction == 'login' ? 'primary' : 'secondary'" (click)="authWithEmail(email.value, password.value)">
       {{ authAction + '_BUTTON' | uppercase | translate }}
     </button>
-
     <button ion-button block color="google" (click)="loginWithGoogle()">
       {{ authAction + '_GOOGLE_BUTTON' | uppercase | translate }}
     </button>
