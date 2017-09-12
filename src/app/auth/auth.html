@@ -1,15 +1,9 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
     <ion-title> {{ authAction | uppercase | translate }}</ion-title>
   </ion-navbar>
   <ion-toolbar>
     <ion-segment [(ngModel)]="authAction" color="secondary">
-      <ion-segment-button value="login">
-        {{ 'LOGIN' | translate }}
-      </ion-segment-button>
       <ion-segment-button value="register">
         {{ 'REGISTER' | translate }}
       </ion-segment-button>
