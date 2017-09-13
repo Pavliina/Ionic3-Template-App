@@ -60,7 +60,7 @@ export class ListPage {
   saveNnext() {
     this.pets.push(this.pet);
     this.pet = {};
-    //this.navCtrl.push("") 
+    this.navCtrl.push("list_2.html") 
   }
   
   }

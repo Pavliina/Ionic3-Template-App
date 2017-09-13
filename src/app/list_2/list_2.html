@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>MAZEL</ion-title>
+      <ion-buttons end>
+        <button ion-button color="danger" (click)="logout()">
+          <ion-icon name="log-out"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  <ion-content>
+    {{this.pets | json}}
+    <ion-list>
+      <ion-item>
+        <ion-input type="boolean" placeholder="Feeding" required [(ngModel)]="Category.Feeding"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="boolean" placeholder="Walk" [(ngModel)]="Category.Walk"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-input type="boolean" placeholder="Game" [(ngModel)]="Category.Game"></ion-input>
+      </ion-item>   
+      <ion-item>
+        <ion-input type="boolean" placeholder="Vet" [(ngModel)]="Category.Vet"></ion-input>
+    </ion-item>   
+    <ion-item>
+      <ion-input type="boolean" placeholder="Medicaments" [(ngModel)]="Category.Medicaments"></ion-input>
+  </ion-item>   
+  <ion-item>
+    <ion-input type="boolean" placeholder="Sweets" [(ngModel)]="Category.Sweets"></ion-input>
+</ion-item>     
+    </ion-list>
+    <button ion-button color="light-dark" round>
+        <ion-icon name="paw" item-start></ion-icon>
+        Další
+    </button>
+  </ion-content>
