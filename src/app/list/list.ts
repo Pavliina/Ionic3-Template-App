@@ -62,11 +62,10 @@ export class ListPage {
       )
     ) as FirebaseListObservable<any[]>;*/
   }
-/*
-  saveNnext() {
-    this.pets.push(this.pet);
-    this.pet = {};
-    //this.navCtrl.push("") 
-  }*/
+
+  save() {
+    this.categories.push(this.category);
+    this.category = {}
+  }
   
   }
