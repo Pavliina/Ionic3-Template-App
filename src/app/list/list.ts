@@ -31,12 +31,12 @@ export class ListPage {
   public userProfile: UserModel;
   public uid: string = "";
   public category: any = {
-    "Feeding": "",
-    "Walk": "",
-    "Game": "",
-    "Vet":"",
-    "Medicaments":"",
-    "Sweets":"", 
+    "feeding": "",
+    "walk": "",
+    "game": "",
+    "vet":"",
+    "medicaments":"",
+    "sweets":"", 
    }
   
 

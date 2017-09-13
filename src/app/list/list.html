@@ -9,25 +9,25 @@
     </ion-navbar>
   </ion-header>
   <ion-content>
-    {{this.pets | json}}
+    {{this.categories | json}}
     <ion-list>
       <ion-item>
-        <ion-input type="boolean" placeholder="Feeding" required [(ngModel)]="category.Feeding"></ion-input>
+        <ion-input type="boolean" placeholder="feeding" required [(ngModel)]="category.feeding"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input type="boolean" placeholder="Walk" [(ngModel)]="category.Walk"></ion-input>
+        <ion-input type="boolean" placeholder="walk" [(ngModel)]="category.walk"></ion-input>
       </ion-item>
       <ion-item>
-          <ion-input type="boolean" placeholder="Game" [(ngModel)]="category.Game"></ion-input>
+          <ion-input type="boolean" placeholder="game" [(ngModel)]="category.game"></ion-input>
       </ion-item>   
       <ion-item>
-        <ion-input type="boolean" placeholder="Vet" [(ngModel)]="category.Vet"></ion-input>
+        <ion-input type="boolean" placeholder="vet" [(ngModel)]="category.vet"></ion-input>
     </ion-item>   
     <ion-item>
-      <ion-input type="boolean" placeholder="Medicaments" [(ngModel)]="category.Medicaments"></ion-input>
+      <ion-input type="boolean" placeholder="medicaments" [(ngModel)]="category.medicaments"></ion-input>
   </ion-item>   
   <ion-item>
-    <ion-input type="boolean" placeholder="Sweets" [(ngModel)]="category.Sweets"></ion-input>
+    <ion-input type="boolean" placeholder="sweets" [(ngModel)]="category.sweets"></ion-input>
 </ion-item>     
     </ion-list>
     <button ion-button color="light-dark" round (click)="save()">
