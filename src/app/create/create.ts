@@ -8,36 +8,30 @@ import 'rxjs/add/operator/map';
 import { DataService } from '../core/data.service';
 import { AuthService } from '../core/auth.service';
 import { UserModel } from '../core/user.model'
-import { CategoryModel } from '../core/pet.model'
+import { PetModel } from '../core/pet.model'
 import { Config } from '../env.constants'
 
 @IonicPage()
 @Component({
   selector: 'page-list',
-  templateUrl: 'list.html'
+  templateUrl: 'create.html'
 })
-export class ListPage {
+export class CreatePage {
 
-  public category: CategoryModel[] = [
+  public pets: PetModel[] = [
     {
-      Feeding: true,
-      Walk: false,
-      Game: true,
-      Vet: true,
-      Medicaments: false,
-      Sweets: false,
+      name: "Fido",
+      animal: "pes",
+      age: 10
     }
   ];
   public userProfile: UserModel;
   public uid: string = "";
-  public categories: any = {
-    "Feeding": "",
-    "Walk": "",
-    "Game": "",
-    "Vet":"",
-    "Medicaments":"",
-    "Sweets":"", 
-   }
+  public pet: any = {
+    "name": "",
+    "animal": "",
+    "age": 0
+  }
   
 
   constructor(
@@ -62,11 +56,11 @@ export class ListPage {
       )
     ) as FirebaseListObservable<any[]>;*/
   }
-/*
+
   saveNnext() {
     this.pets.push(this.pet);
     this.pet = {};
-    //this.navCtrl.push("") 
-  }*/
+    this.navCtrl.push("ListPage") 
+  }
   
   }
