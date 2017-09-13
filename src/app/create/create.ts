@@ -18,19 +18,14 @@ import { Config } from '../env.constants'
 })
 export class CreatePage {
 
-  public pets: PetModel[] = [
-    {
-      name: "Fido",
-      animal: "pes",
-      age: 10
-    }
-  ];
+  public pets: PetModel[];
   public userProfile: UserModel;
   public uid: string = "";
   public pet: any = {
     "name": "",
     "animal": "",
-    "age": 0
+    "age": 0,
+    "owner": ""
   }
   
 
@@ -47,19 +42,24 @@ export class CreatePage {
     this.authService.getFullProfile().subscribe((user) => {
       this.userProfile = user;
       this.uid = user.uid;
+      this.pet.owner = this.uid;
     });
-    /*this.tasks = this.db.listAll(Config.firebase_tables.Tasks, {
-      orderByChild: "deadline"
+    this.db.listAll("pets", {
+      orderByChild: "name"
     }).map(
-      tasks => tasks.filter(
-        task => task.user == this.uid
+      pets => pets.filter(
+        pet => pet.owner == this.uid
       )
-    ) as FirebaseListObservable<any[]>;*/
+    ).subscribe((pets) => {
+      this.pets = pets;
+    })
   }
 
   saveNnext() {
-    this.pets.push(this.pet);
-    this.pet = {};
+    this.db.add("pets", this.pet)
+    this.pet = {
+      "owner": this.uid
+    };
     this.navCtrl.push("ListPage") 
   }
   

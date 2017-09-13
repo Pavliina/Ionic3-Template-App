@@ -12,22 +12,28 @@
     {{this.categories | json}}
     <ion-list>
       <ion-item>
-        <ion-input type="boolean" placeholder="feeding" required [(ngModel)]="category.feeding"></ion-input>
+        <ion-label>feeding</ion-label>
+        <ion-checkbox color="favorite" checked="false"></ion-checkbox>
       </ion-item>
       <ion-item>
-        <ion-input type="boolean" placeholder="walk" [(ngModel)]="category.walk"></ion-input>
+          <ion-label>walk</ion-label>
+          <ion-checkbox color="favorite" checked="false"></ion-checkbox>
       </ion-item>
       <ion-item>
-          <ion-input type="boolean" placeholder="game" [(ngModel)]="category.game"></ion-input>
+          <ion-label>game</ion-label>
+          <ion-checkbox color="favorite" checked="false"></ion-checkbox>
       </ion-item>   
       <ion-item>
-        <ion-input type="boolean" placeholder="vet" [(ngModel)]="category.vet"></ion-input>
+          <ion-label>vet</ion-label>
+          <ion-checkbox color="favorite" checked="false"></ion-checkbox>
     </ion-item>   
     <ion-item>
-      <ion-input type="boolean" placeholder="medicaments" [(ngModel)]="category.medicaments"></ion-input>
+        <ion-label>medicaments</ion-label>
+        <ion-checkbox color="favorite" checked="false"></ion-checkbox>
   </ion-item>   
   <ion-item>
-    <ion-input type="boolean" placeholder="sweets" [(ngModel)]="category.sweets"></ion-input>
+      <ion-label>sweets</ion-label>
+      <ion-checkbox color="favorite" checked="false"></ion-checkbox>
 </ion-item>     
     </ion-list>
     <button ion-button color="light-dark" round (click)="save()">
