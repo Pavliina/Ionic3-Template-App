@@ -49,45 +49,6 @@ export class SeznamPage {
   }
   
   addTask() {
-    let alert = this.alertCtrl.create({
-      title: 'Login',
-      inputs: [
-        {
-          name: 'title',
-          placeholder: 'Title'
-        },
-        {
-          name: 'deadline',
-          placeholder: 'Deadline',
-          type: 'date'
-        },
-        {
-          name: 'priority',
-          placeholder: 'Priority',
-          type: 'number'
-        },
-      ],
-      buttons: [
-        {
-          text: 'Cancel',
-          role: 'cancel',
-          handler: data => {}
-        },
-        {
-          text: 'Save',
-          handler: data => {
-            this.db.add(Config.firebase_tables.Tasks, {
-              title: data.title,
-              user: this.userProfile.uid,
-              deadline: data.deadline,
-              priority: data.priority,
-              done: false
-            })
-          }
-        }
-      ]
-    });
-    alert.present();
+    this.navCtrl.push("CreatePage")
   }
-  
-  }
+}
