@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, IonicPage, AlertController } from 'ionic-angular';
+import { NavController, IonicPage, AlertController, NavParams } from 'ionic-angular';
 
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import * as firebase from 'firebase/app';
@@ -37,11 +37,13 @@ export class ListPage {
     "vet":"",
     "medicaments":"",
     "sweets":"", 
+    "petId":""
    }
   
 
   constructor(
     public navCtrl: NavController, 
+    public navParams: NavParams,
     public db: DataService,
     public authService: AuthService,
     private alertCtrl: AlertController
@@ -53,18 +55,13 @@ export class ListPage {
     this.authService.getFullProfile().subscribe((user) => {
       this.userProfile = user;
       this.uid = user.uid;
+      this.category.petId = this.navParams.get("pet");
     });
-    /*this.tasks = this.db.listAll(Config.firebase_tables.Tasks, {
-      orderByChild: "deadline"
-    }).map(
-      tasks => tasks.filter(
-        task => task.user == this.uid
-      )
-    ) as FirebaseListObservable<any[]>;*/
   }
 
   save() {
     this.categories.push(this.category);
+    this.db.add("categories", this.category);
     this.category = {}
   }
   
