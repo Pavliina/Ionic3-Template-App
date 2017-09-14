@@ -9,31 +9,30 @@
     </ion-navbar>
   </ion-header>
   <ion-content>
-    {{this.categories | json}}
     <ion-list>
       <ion-item>
         <ion-label>feeding</ion-label>
-        <ion-checkbox color="favorite" checked="false"></ion-checkbox>
+        <ion-checkbox color="favorite" checked="false" [(ngModel)]="category.feeding"></ion-checkbox>
       </ion-item>
       <ion-item>
           <ion-label>walk</ion-label>
-          <ion-checkbox color="favorite" checked="false"></ion-checkbox>
+          <ion-checkbox color="favorite" checked="false" [(ngModel)]="category.walk"></ion-checkbox>
       </ion-item>
       <ion-item>
           <ion-label>game</ion-label>
-          <ion-checkbox color="favorite" checked="false"></ion-checkbox>
+          <ion-checkbox color="favorite" checked="false" [(ngModel)]="category.game"></ion-checkbox>
       </ion-item>   
       <ion-item>
           <ion-label>vet</ion-label>
-          <ion-checkbox color="favorite" checked="false"></ion-checkbox>
+          <ion-checkbox color="favorite" checked="false" [(ngModel)]="category.vet"></ion-checkbox>
     </ion-item>   
     <ion-item>
         <ion-label>medicaments</ion-label>
-        <ion-checkbox color="favorite" checked="false"></ion-checkbox>
+        <ion-checkbox color="favorite" checked="false" [(ngModel)]="category.medicaments"></ion-checkbox>
   </ion-item>   
   <ion-item>
       <ion-label>sweets</ion-label>
-      <ion-checkbox color="favorite" checked="false"></ion-checkbox>
+      <ion-checkbox color="favorite" checked="false" [(ngModel)]="category.sweets"></ion-checkbox>
 </ion-item>     
     </ion-list>
     <button ion-button color="light-dark" round (click)="save()">

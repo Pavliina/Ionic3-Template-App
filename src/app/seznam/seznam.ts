@@ -52,8 +52,12 @@ export class SeznamPage {
     this.navCtrl.push("CreatePage")
   }
 
+  goToCategories(pet) {
+    this.navCtrl.push("ListPage", {"pet":pet.$key})
+  }
+
   logout() {
     this.authService.signOut().then(() => this.navCtrl.setRoot('AuthPage'));
   }
-  
+
 }

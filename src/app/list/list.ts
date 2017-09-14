@@ -18,26 +18,17 @@ import { Config } from '../env.constants'
 })
 export class ListPage {
 
-  public categories: CategoryModel[] = [
-    {
-      Feeding: true,
-      Walk: false,
-      Game: true,
-      Vet: true,
-      Medicaments: false,
-      Sweets: false,
-    }
-  ];
   public userProfile: UserModel;
   public uid: string = "";
+  public pet: any;
   public category: any = {
-    "feeding": "",
-    "walk": "",
-    "game": "",
-    "vet":"",
-    "medicaments":"",
-    "sweets":"", 
-    "petId":""
+    "feeding": false,
+    "walk": false,
+    "game": false,
+    "vet":false,
+    "medicaments":false,
+    "sweets":false, 
+    "petId":false
    }
   
 
@@ -56,13 +47,24 @@ export class ListPage {
       this.userProfile = user;
       this.uid = user.uid;
       this.category.petId = this.navParams.get("pet");
+      console.log(this.category.petId);
+      this.db.get("pets", this.category.petId).subscribe((pet) => {
+        this.pet = pet;
+      });
     });
   }
 
   save() {
-    this.categories.push(this.category);
     this.db.add("categories", this.category);
-    this.category = {}
+    this.category = {
+      "feeding": false,
+      "walk": false,
+      "game": false,
+      "vet":false,
+      "medicaments":false,
+      "sweets":false, 
+      "petId":false
+     }
   }
   
   }
