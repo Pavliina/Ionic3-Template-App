@@ -13,5 +13,7 @@
   "DELETE_ALL": "Smazat vše",
   "MARK_DONE": "Nesplněno",
   "MARK_UNDONE": "Splněno",
-  "DELETE": "Smazat"
+  "DELETE": "Smazat",
+
+  "NEXT": "Další"
 }

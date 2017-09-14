@@ -6,7 +6,7 @@
     <ion-title> Mazel </ion-title>
   </ion-navbar>
   <ion-toolbar>
-    <ion-segment [(ngModel)]="authAction" color="secondary">
+    <ion-segment [(ngModel)]="authAction" color="primary">
         <ion-segment-button value="login">
           {{ 'LOGIN' | translate }}
         </ion-segment-button>
@@ -28,10 +28,10 @@
     </ion-item>
   </ion-list>
   <div class="position-bottom">
-    <button ion-button block [color]="authAction == 'login' ? 'primary' : 'secondary'" (click)="authWithEmail(email.value, password.value)">
+    <button ion-button block [color]="authAction == 'login' ? 'primary' : 'secondary'" round (click)="authWithEmail(email.value, password.value)">
       {{ authAction + '_BUTTON' | uppercase | translate }}
     </button>
-    <button ion-button block color="google" (click)="loginWithGoogle()">
+    <button ion-button block color="google" round (click)="loginWithGoogle()">
       {{ authAction + '_GOOGLE_BUTTON' | uppercase | translate }}
     </button>
   </div>
