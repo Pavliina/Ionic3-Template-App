@@ -39,7 +39,7 @@ export class AppComponent {
       .map(state => !!state)
       .subscribe(authenticated => {
         loading.dismiss();
-        this.rootPage = (authenticated) ? 'ListPage' : 'AuthPage';
+        this.rootPage = (authenticated) ? 'SeznamPage' : 'AuthPage';
       }, (error) => {
         loading.dismiss();
         this.rootPage = 'AuthPage';

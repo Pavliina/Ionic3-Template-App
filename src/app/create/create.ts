@@ -59,7 +59,9 @@ export class CreatePage {
     this.pet = {
       "owner": this.uid
     };
-    this.navCtrl.push("ListPage") 
+    this.navCtrl.push("SeznamPage") 
   }
-  
+  logout() {
+    this.authService.signOut().then(() => this.navCtrl.setRoot('AuthPage'));
+  }
   }

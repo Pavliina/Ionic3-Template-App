@@ -64,7 +64,10 @@ export class ListPage {
       "medicaments":false,
       "sweets":false, 
       "petId":false
-     }
+     };
+    this.navCtrl.push("SeznamPage")
   }
-  
+  logout() {
+    this.authService.signOut().then(() => this.navCtrl.setRoot('AuthPage'));
+  }
   }
