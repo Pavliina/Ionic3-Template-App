@@ -51,4 +51,9 @@ export class SeznamPage {
   addTask() {
     this.navCtrl.push("CreatePage")
   }
+
+  logout() {
+    this.authService.signOut().then(() => this.navCtrl.setRoot('AuthPage'));
+  }
+  
 }
