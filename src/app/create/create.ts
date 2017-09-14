@@ -24,7 +24,6 @@ export class CreatePage {
   public pet: any = {
     "name": "",
     "animal": "",
-    "age": 0,
     "owner": ""
   }
   

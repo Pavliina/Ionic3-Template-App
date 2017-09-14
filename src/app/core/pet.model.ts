@@ -1,7 +1,7 @@
 export class PetModel {
   name: string;
   animal: string;
-  age: number;
+  age?: number;
   owner: string;
 }
 export class CategoryModel {
