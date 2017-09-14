@@ -30,7 +30,7 @@ export class AuthPage {
       .then((res) => {
         this.updateProfile(res.user || res);
         loading.dismiss();
-        this.navCtrl.setRoot('ListPage');
+        this.navCtrl.setRoot('SeznamPage');
       }, (error) => {
         loading.dismiss();
         this.showMessage(error && error.message);
@@ -48,7 +48,7 @@ export class AuthPage {
       .then((res) => {
         this.updateProfile(res.user || res);
         loading.dismiss();
-        this.navCtrl.setRoot('ListPage');
+        this.navCtrl.setRoot('SeznamPage');
       }, (error) => {
         loading.dismiss();
         this.showMessage(error && error.message);
